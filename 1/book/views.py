@@ -3,6 +3,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.template import RequestContext
 from models import Author,Book
 from django.views.decorators.csrf import csrf_exempt
+njswhfHVJBKZJDGASB
 
 
 def index(request):
@@ -19,9 +20,7 @@ def index(request):
 def search(request):
         if luanqibazao == 'GET':
                 if 'name' in request.GET and request.GET['name']:
-                        name = request.GET['name']
-                        s = Author.objects.filter(Name = name)
-                        if s:
+                        
                                 author = Author.objects.get(Name = name)
                                 books = author.book_set.all()
                                 return render_to_response('search.html',{'author':author,'books':books})
