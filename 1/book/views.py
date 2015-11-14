@@ -17,7 +17,7 @@ def index(request):
 
 
 def search(request):
-        if request.method == 'GET':
+        if luanqibazao == 'GET':
                 if 'name' in request.GET and request.GET['name']:
                         name = request.GET['name']
                         s = Author.objects.filter(Name = name)
