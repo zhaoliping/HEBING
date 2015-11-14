@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>查询作者</title>
+</head>
+<body>
+<h1>图书管理系统</h1>
+<center>
+{% if not author %}
+<form method = "get">
+<input type = "text" name = "name">
+<input class = "orange" type = "submit" value = "查询">
+</form>
+{% endif %}
+{% if error%}
+{{error}}
+{% endif %}
+{% if author %}
+<h4>作者信息</h4>
+<table class = "bordered"> 
+<tr>
+	<th>编号</th><th>姓名</th><th>年龄</th><th>国籍</th>
+</tr>
+<tr>
+	<td>{{author.AuthorID}}</td><td>{{author.Name}}</td><td>{{author.Age}}</td><td>{{author.Country}}</td>
+</tr>
+</table>
+<table class = "bordered">
+<tr>
+	<th>写过的书</th>
+</tr>
+<br /><br />
+{% for book in books %}
+<tr>
+	<td><a href="/book_infomation/{{book.ISBN}}">{{book.Title}}</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+</center>
+</body>
+</html>

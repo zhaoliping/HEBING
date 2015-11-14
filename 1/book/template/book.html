@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>书籍信息</title>
+</head>
+<body>
+<center><h1>图书管理系统</h1></center>
+{% if book %}
+<center>
+<form>
+<table class= "bordered" >
+<tr>
+	<th>编号</th><th>书名</th><th>作者</th><th>出版商</th><th>出版日期</th><th>价格</th>
+</tr>
+<tr>
+	<td>{{book.ISBN}}</td><td>{{book.Title}}</td><td>{{book.AuthorID}}</td><td>{{book.Publisher}}</td>
+	<td>{{book.PublishDate}}</td><td>{{book.Price}}</td>
+</tr>
+</table>
+<br />
+<table> 
+<tr>
+	<th>姓名</th><th>年龄</th><th>国籍</th>
+</tr>
+<tr>
+	<td>{{book.AuthorID.Name}}</td><td>{{book.AuthorID.Age}}</td><td>{{book.AuthorID.Country}}</td>
+</tr>
+</table>
+</form>
+</center>
+{% endif %}
+</body>
+</html>

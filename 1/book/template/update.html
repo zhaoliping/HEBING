@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>更新书籍</title>
+</head>
+<body>
+<h1>图书管理系统</h1>
+<form method = "post">
+书名<input type = "text" value = "{{book.Title}}" readonly = true><br /><br />
+作者
+	<select name="AuthorID">
+	<option>请选择</option> 
+	{% for author in authors %}
+	<option value="{{author.Name}}">{{author.Name}}</option> 
+	{% endfor %}
+	</select>
+	<br />
+出版社<input type = "text" name = "publisher" value = "{{book.Publisher}}"><br /><br />
+出版日期<input type = "text" name = "publishdate" value = "{{book.PublishDate}}"><br /><br />
+价格<input type = "text" name = "price" value = "{{book.Price}}"><br /><br />
+<input type = "submit" value = "保存"/>
+</form>
+</body>
+</html>

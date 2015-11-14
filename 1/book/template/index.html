@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>图书管理系统</title>
+</head>
+
+<body>
+<h1>图书管理系统</h1>
+{% if books %}
+<form method = "get">
+{% for book in books %}
+    <li><a href="/book/{{book.ISBN}}">{{book}}</a>
+	<button name="delete" value="{{book.ISBN}}">删 除</button>
+	<a href = "/update/{{book.ISBN}}/">更新</button></a></li>
+{% endfor %}
+</form>
+{% endif %}
+
+{% if not books %}
+<center>
+<h2>没有图书!</h2>
+</center>
+{% endif%}
+
+<br />
+<button><a href="/search">查询作者</a></button>
+<button><a href="/addbook">添加书籍</a></button>
+<button><a href="/addauthor">添加作者</a></button>
+
+</body>
+</html>
