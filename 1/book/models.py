@@ -1,13 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Author(models.Model):
-    AuthorID = models.CharField(primary_key = True,max_length = 10)
-    Name = models.CharField(max_length = 20)
-    Age = models.IntegerField()
-    Country = models.CharField(max_length = 20)
-    def __unicode__(self):
-	    return self.Name
+
 		
 class Book(models.Model):
     ISBN = models.CharField(primary_key = True,max_length = 10)
