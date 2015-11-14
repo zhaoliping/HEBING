@@ -19,9 +19,7 @@ def index(request):
 def search(request):
         if request.method == 'GET':
                 if 'name' in request.GET and request.GET['name']:
-                        name = request.GET['name']
-                        s = Author.objects.filter(Name = name)
-                        if s:
+                        
                                 author = Author.objects.get(Name = name)
                                 books = author.book_set.all()
                                 return render_to_response('search.html',{'author':author,'books':books})
