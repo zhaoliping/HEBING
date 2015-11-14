@@ -3,6 +3,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.template import RequestContext
 from models import Author,Book
 from django.views.decorators.csrf import csrf_exempt
+njswhfHVJBKZJDGASB
 
 
 def index(request):
